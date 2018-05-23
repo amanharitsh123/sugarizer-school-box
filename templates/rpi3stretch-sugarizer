@@ -1,0 +1,17 @@
+RPI_MODEL=3
+RELEASE=stretch
+ENABLE_DM=${ENABLE_DM:="lightdm"}
+BUILD_KERNEL=true
+KERNEL_ARCH=arm64
+RELEASE_ARCH=arm64
+CROSS_COMPILE=aarch64-linux-gnu-
+QEMU_BINARY=/usr/bin/qemu-aarch64-static
+KERNEL_DEFCONFIG=bcmrpi3_defconfig
+KERNEL_BIN_IMAGE=Image
+KERNEL_IMAGE=kernel8.img
+KERNEL_BRANCH=rpi-4.11.y
+ENABLE_WIRELESS=true
+ENABLE_XORG=true
+ENABLE_MINBASE=true
+ENABLE_DHCP=true
+APT_INCLUDES="iptables,procps,docker-compose,python,python-pip,apt-transport-https,ca-certificates,curl,gnupg2,software-properties-common"
