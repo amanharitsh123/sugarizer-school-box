@@ -14,4 +14,6 @@ ENABLE_WIRELESS=true
 ENABLE_XORG=true
 ENABLE_MINBASE=true
 ENABLE_DHCP=true
-APT_INCLUDES="iptables,procps,docker-compose,python,python-pip,apt-transport-https,ca-certificates,curl,gnupg2,software-properties-common"
+ENABLE_WIRELESS=true
+ENABLE_DHCP=ture
+APT_INCLUDES="docker,isc-dhcp-client,wpasupplicant,network-manager,wireless-tools,iptables,procps,docker-compose,python,python-pip,apt-transport-https,ca-certificates,curl,gnupg2,software-properties-common"

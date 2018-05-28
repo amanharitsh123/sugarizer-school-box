@@ -1,4 +1,5 @@
 images
+build
 *.swp
 *.bak
 *.log

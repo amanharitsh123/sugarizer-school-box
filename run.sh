@@ -1,9 +1,9 @@
 #!/bin/bash
 
 #Checking for root permissions
-if (( $EUID )); then
-   echo "This script must be run as root" 
-   exit 1
+if [ "$(id -u)" -ne "0" ] ; then
+  echo "error: this script must be executed with root privileges!"
+  exit 1
 fi
 
 echo "Starting Script"
@@ -25,8 +25,12 @@ fi
 #Copying Scripts from ./scripts to /build/custom.d
 find ../scripts -type f -name \* -exec cp {} ./custom.d/ \;
 
-#Copying packages
-cp -r ../packages/* ./files/ 
+#Copying .deb packages
+if [ ! -d "packages" ]; then
+  mkdir packages
+fi
+
+cp -r ../packages/* ./packages/ 
 
 #Copying Templates
 cp -r ../templates .
@@ -34,7 +38,6 @@ cp -r ../templates .
 #Starting the Build Script
 CONFIG_TEMPLATE="rpi3stretch-sugarizer" ./rpi*
 
-rm -r custom.d
 cd ..
 
 if [ ! -d "images" ]; then
@@ -42,7 +45,6 @@ if [ ! -d "images" ]; then
 fi
 
 
-mv build/images/*.img ./images/
-mv build/images/*.b* ./images/
+mv build/images ./images/
 
-rm -r build/images
+
