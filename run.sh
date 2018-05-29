@@ -40,11 +40,6 @@ CONFIG_TEMPLATE="rpi3stretch-sugarizer" ./rpi*
 
 cd ..
 
-if [ ! -d "images" ]; then
-  mkdir images
-fi
-
-
-mv build/images ./images/
+mv build/images .
 
 
