@@ -31,7 +31,8 @@ fi
  
 
 #Copying Scripts from ./scripts to /build/custom.d
-find ../scripts -type f -name \* -exec cp {} ./custom.d/ \;
+find ../custom_scripts -type f -name \* -exec cp {} ./custom.d/ \;
+
 
 #Copying .deb packages
 if [ ! -d "packages" ]; then
