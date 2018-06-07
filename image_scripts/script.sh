@@ -1,6 +1,11 @@
-cd /home/pi/docker-images 
-sudo docker load -i mongodb.docker 
-sudo docker load -i node.docker 
-cd /home/pi/sugarizer-server 
+#!/bin/sh 
+echo "Starting Script" 
+cd /home/pi/docker-images/
+docker load -i mongodb.docker 
+docker load -i node.docker
+cd /home/pi/sugarizer-server/
 sh gene*
-sudo docker-compose up -d 
+docker-compose up -d 
+sed -i '/^sh/d' /etc/rc.local
+exit 0
+
