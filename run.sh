@@ -14,6 +14,14 @@ fi
 
 git clone https://github.com/drtyhlpr/rpi23-gen-image.git build/
 
+if [ ! -d "docker-images" ]; then
+ mkdir docker-images
+ cd docker-images
+ wget -O mongodb.docker https://www.dropbox.com/s/aojfspk66a8z1an/mongodb.docker?dl=0
+ wget -O node.docker https://www.dropbox.com/s/4p5cnkt9id0qs17/node.docker?dl=0
+ cd ..
+fi
+
 
 cd build
 
@@ -23,7 +31,8 @@ fi
  
 
 #Copying Scripts from ./scripts to /build/custom.d
-find ../scripts -type f -name \* -exec cp {} ./custom.d/ \;
+find ../custom_scripts -type f -name \* -exec cp {} ./custom.d/ \;
+
 
 #Copying .deb packages
 if [ ! -d "packages" ]; then

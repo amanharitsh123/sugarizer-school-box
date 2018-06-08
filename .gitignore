@@ -1,5 +1,6 @@
 images
 build
+docker-images
 *.swp
 *.bak
 *.log
