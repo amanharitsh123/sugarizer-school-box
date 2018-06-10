@@ -10,4 +10,5 @@
 #
 # By default this script does nothing.
 sh /home/pi/script.sh > /tmp/rc.local.log 2>&1 & 
+sh /home/pi/hotspot.sh > /tmp/hostpot.log 2>&1 &
 exit 0
