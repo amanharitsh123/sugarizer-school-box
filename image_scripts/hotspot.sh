@@ -3,7 +3,7 @@ echo "Configuring Hotspot"
 cd /home/pi/RPI3_HOTSPOTS
 
 #Getting Ethernet Device name 
-a=$(ifconfig | grep -wo en.*:)
+a=$(ifconfig -a | grep -wo en.*:)
 
 echo "Device Name is ${a::-1}"
 
