@@ -17,4 +17,4 @@ sh install.sh
 ap sugarizer 12345678
 
 sed -i '/^exit/d' /etc/rc.local
-echo -e "ap sugarizer 12345678\nexit 0" >> /etc/rc.local
+echo -e "ifconfig wlan0 up\nap sugarizer 12345678\nexit 0" >> /etc/rc.local
