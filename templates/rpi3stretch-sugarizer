@@ -16,4 +16,5 @@ ENABLE_MINBASE=true
 ENABLE_DHCP=true
 ENABLE_WIRELESS=true
 ENABLE_DHCP=ture
+CHROOT_SCRIPTS="../chroot_scripts"
 APT_INCLUDES="isc-dhcp-client,wpasupplicant,network-manager,wireless-tools,iptables,procps,docker-compose,python,python-pip,apt-transport-https,ca-certificates,curl,gnupg2,software-properties-common,hostapd,udhcpd,dnsmasq,udhcpc,zip,unzip,dhcpcd5"
