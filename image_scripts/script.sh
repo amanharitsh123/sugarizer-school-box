@@ -1,4 +1,4 @@
-#!/bin/sh 
+#!/bin/sh -e
 echo "Starting Script" 
 cd /home/pi/docker-images/
 docker load -i mongodb.docker 
