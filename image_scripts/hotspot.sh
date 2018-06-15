@@ -1,5 +1,9 @@
 #!/bin/bash -e
 echo "Configuring Hotspot"
+
+ssid="SugarizerSchoolBox"
+pass="sugarizer"
+
 cd /home/pi/RPI3_HOTSPOTS
 
 #Getting Ethernet Device name 
@@ -14,8 +18,8 @@ sed -i -e "s/eth0/${a::-1}/g" *
 sh install.sh
 
 #starting AP
-ap sugarizer 12345678
+ap $ssid $pass
 
 sed -i '/^exit/d' /etc/rc.local
 sed -i '/^bash/d' /etc/rc.local
-echo -e "ifconfig wlan0 up\nap sugarizer 12345678\nexit 0" >> /etc/rc.local
+echo -e "ifconfig wlan0 up\nap $ssid $pass\nexit 0" >> /etc/rc.local
