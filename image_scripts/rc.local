@@ -1,4 +1,4 @@
-#!/bin/sh -e
+#!/bin/sh 
 #
 # rc.local
 #
@@ -9,5 +9,7 @@
 # bits.
 #
 # By default this script does nothing.
-sh /home/pi/script.sh > /tmp/rc.local.log 2>&1 & 
+/etc/rc.firstboot
+bash /home/pi/hotspot.sh > /home/hostpot.log 2>&1 &
+/home/pi/status.sh > /home/status.log 2>&1 &
 exit 0
