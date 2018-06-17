@@ -20,7 +20,11 @@ ifconfig wlan0 up
 sh install.sh
 
 ifconfig wlan0 up
-
 #starting AP
 ap $ssid $pass
+sed -i '/^exit 0/d' /etc/rc.local
+echo -e "ifconfig wlan0 up\nap $ssid $pass" >> /etc/rc.local
+echo -e "sudo iptables -t nat -A POSTROUTING -o ${a::-1} -j MASQUERADE\nsudo iptables -A FORWARD -i ${a::-1} -o wlan0 -m state --state RELATED,ESTABLISHED -j ACCEPT\nsudo iptables -A FORWARD -i wlan0 -o ${a::-1} -j ACCEPT\nexit 0" >> /etc/rc.local
+sh /home/pi/script.sh > /home/rc.local.log 2>&1 & 
+
 
