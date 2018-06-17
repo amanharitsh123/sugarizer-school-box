@@ -15,15 +15,20 @@ sudo sh run.sh
 ```shell
 bmaptool copy ./images/*.img /dev/mmcblk0
 ```
+Windows user can use Etcher(https://etcher.io/) to flash image.
 
 ### Some Important Instructions
 - Find your sdcard's mount point and replace it with "mmcblk0" while flashing.
-- After flashing , check the partition size on your sd card. If there is any free space , then extend the second partition manually to occupy the whole card storage.
-- Default ssid is sugarizer and passphrase is 12345678. These can be changed in image_scripts/hotspot.sh by replacing every reference to  ```ap sugarizer 12345678``` with ```ap Your_SSID Your_Passphrase``` before starting a build.
-- In the first boot, keep the rpi running for an hour. Docker images will be loaded and containers will be made , followed by network setup.Hotspot will not work during the first run. After an hour, reboot the pi.
-- Wifi Hotspot will be active after 3-4 mins after reboot.
+- Default ssid is "SugarizerSchoolBox" and passphrase is "sugarizer". These can be changed in image_scripts/hotspot.sh by changing $ssid and $pass variables.
+- In the first boot,make sure that pi has a working ethernet connection. Docker images will be loaded and containers will be made, followed by network setup.Pi will reboot as soon as the setup is done, now you can connect to the AP.
+- It will take 30-35mins approx for the setting server up.
 - After connecting , sugarizer will be accessible at 192.168.42.1:8080. 
 
+### Download Latest Image
+Download Link: https://drive.google.com/drive/folders/1Jt8X6kHLJqGvl7gSm7xkM1mMRhPBLWWl?usp=sharing
+
+### Documentation
+https://wiki.sugarlabs.org/go/User:Amanharitsh123
 
 ### Debugging
 Have a look at the dependencies and instructions here : https://github.com/drtyhlpr/rpi23-gen-image
