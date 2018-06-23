@@ -18,3 +18,7 @@ cd ${R}/home/pi/sugarizer
 npm install
 grunt
 cp -r build/* .
+
+#Ownership changed
+chown -R pi ${R}/home/pi/*
+chgrp -R pi ${R}/home/pi/*
