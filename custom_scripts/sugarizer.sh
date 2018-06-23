@@ -1,7 +1,7 @@
 #Cloning all Required Repositories
 git clone https://github.com/llaske/sugarizer ${R}/home/pi/sugarizer
 git clone https://github.com/llaske/sugarizer-server ${R}/home/pi/sugarizer-server
-git clone https://github.com/quangthanh010290/RPI3_HOTSPOTS.git ${R}/home/pi/RPI3_HOTSPOTS
+git clone https://github.com/amanharitsh123/RPI3_HOTSPOTS ${R}/home/pi/RPI3_HOTSPOTS
 
 #Copying Docker Images
 cp -r ../docker-images ${R}/home/pi/
