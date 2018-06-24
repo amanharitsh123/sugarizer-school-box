@@ -8,6 +8,15 @@ fi
 
 echo "Starting Script"
 
+if which node > /dev/null
+    then
+        echo "Installing Grunt"
+        npm install -g grunt-cli
+    else
+        echo -e "Node and NPM not installed/n Exiting script"
+        exit 0 
+    fi
+
 if [ -d "build" ]; then
  rm -r build
 fi
