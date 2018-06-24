@@ -7,9 +7,7 @@ git clone https://github.com/amanharitsh123/RPI3_HOTSPOTS ${R}/home/pi/RPI3_HOTS
 cp -r ../docker-images ${R}/home/pi/
 
 #Copying all required scripts to the image
-cp ../image_scripts/script.sh ${R}/home/pi/
-cp ../image_scripts/hotspot.sh ${R}/home/pi/
-cp ../image_scripts/status.sh ${R}/home/pi/
+cp ../image_scripts/*.sh ${R}/home/pi/
 rm ${ETC_DIR}/rc.local
 cp ../image_scripts/rc.local ${ETC_DIR}/
 
