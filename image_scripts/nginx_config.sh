@@ -5,8 +5,8 @@ server {
 
        server_name _;
 
-       add_header ‘Access-Control-Allow-Origin’ ‘*’;
-       add_header ‘Access-Control-Allow-Methods’ ‘GET, POST, OPTIONS’;
+       add_header 'Access-Control-Allow-Origin' '*';
+       add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
 
        location / {
                proxy_pass http://localhost:8080;
@@ -17,7 +17,7 @@ server {
        }
        location /contents/khan {
         root /home/pi/;
-               if ($args ~ “^lang=(..)“) {
+               if ($args ~ "^lang=(..)") {
                        set $key1 $1;
                        rewrite khan.php khan_$key1.json permanent;
                }
