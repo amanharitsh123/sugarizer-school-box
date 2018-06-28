@@ -8,6 +8,7 @@ cp -r ../docker-images ${R}/home/pi/
 
 #Copying all required scripts to the image
 cp ../image_scripts/*.sh ${R}/home/pi/
+cp ../image_scripts/sugarizer ${R}/home/pi/
 rm ${ETC_DIR}/rc.local
 cp ../image_scripts/rc.local ${ETC_DIR}/
 
@@ -17,6 +18,3 @@ npm install
 grunt
 cp -r build/* .
 
-#Ownership changed
-chown -R pi ${R}/home/pi/*
-chgrp -R pi ${R}/home/pi/*
