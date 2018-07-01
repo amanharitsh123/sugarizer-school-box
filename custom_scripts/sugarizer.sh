@@ -18,3 +18,7 @@ npm install
 grunt
 cp -r build/* .
 
+#Changing Hostname
+echo "SugarizerSchoolBox" > ${ETC_DIR}/hostname
+sed -i "s/rpi3-stretch/SugarizerSchoolBox/g" > ${ETC_DIR}/hosts
+
