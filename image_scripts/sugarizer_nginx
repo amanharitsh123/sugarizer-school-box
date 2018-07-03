@@ -9,15 +9,7 @@ server {
        location / {
                proxy_pass http://localhost:8080;
        }
-       location /contents/canope {
-        root /home/pi/;
-               rewrite canope.php canope.json permanent;
-       }
-       location /contents/khan {
-        root /home/pi/;
-               if ($args ~ "^lang=(..)") {
-                       set $key1 $1;
-                       rewrite khan.php khan_.json permanent;
-               }
-       }
+       location /content {
+               root /home/pi/;
+       }       
 }

@@ -1,7 +1,10 @@
 # Nginx Config File
-mv /home/pi/sugarizer /etc/nginx/sites-available/default
+mv /home/pi/sugarizer_nginx /etc/nginx/sites-available/default
 #DNS Configurations
+echo "10.0.0.1  server.sugarizer.org" >> /etc/hosts
 echo "10.0.0.1  try.sugarizer.org" >> /etc/hosts
+echo "10.0.0.1  sugarizer.org" >> /etc/hosts
+
 cat > /etc/dnsmasq.conf << EOF
 domain-needed
 bogus-priv
