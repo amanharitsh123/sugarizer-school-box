@@ -9,4 +9,8 @@ done
 
 echo "Sugarizer Started in $(($SECONDS/3600))h $(($SECONDS%3600/60))m $(($SECONDS%3600%60))s"
 sed -i '/^\//d' /etc/rc.local
+
+#Ownership changed
+chown -R pi /home/pi/*
+chgrp -R pi /home/pi/*
 systemctl reboot

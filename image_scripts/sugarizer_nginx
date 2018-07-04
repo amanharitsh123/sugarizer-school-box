@@ -1,0 +1,15 @@
+server {
+       listen 80;
+
+       server_name _;
+
+       add_header 'Access-Control-Allow-Origin' '*';
+       add_header 'Access-Control-Allow-Methods' 'GET, POST, OPTIONS';
+
+       location / {
+               proxy_pass http://localhost:8080;
+       }
+       location /content {
+               root /home/pi/;
+       }       
+}

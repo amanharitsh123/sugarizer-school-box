@@ -7,9 +7,8 @@ git clone https://github.com/amanharitsh123/RPI3_HOTSPOTS ${R}/home/pi/RPI3_HOTS
 cp -r ../docker-images ${R}/home/pi/
 
 #Copying all required scripts to the image
-cp ../image_scripts/script.sh ${R}/home/pi/
-cp ../image_scripts/hotspot.sh ${R}/home/pi/
-cp ../image_scripts/status.sh ${R}/home/pi/
+cp ../image_scripts/*.sh ${R}/home/pi/
+cp ../image_scripts/sugarizer_nginx ${R}/home/pi/
 rm ${ETC_DIR}/rc.local
 cp ../image_scripts/rc.local ${ETC_DIR}/
 
@@ -19,6 +18,7 @@ npm install
 grunt
 cp -r build/* .
 
-#Ownership changed
-chown -R pi ${R}/home/pi/*
-chgrp -R pi ${R}/home/pi/*
+#Changing Hostname
+echo "SugarizerSchoolBox" > ${ETC_DIR}/hostname
+sed -i "s/rpi3-stretch/SugarizerSchoolBox/g" ${ETC_DIR}/hosts
+
