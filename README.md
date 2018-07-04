@@ -22,10 +22,10 @@ Windows user can use Etcher(https://etcher.io/) to flash image.
 - Default ssid is "SugarizerSchoolBox" and passphrase is "sugarizer". These can be changed in image_scripts/hotspot.sh by changing $ssid and $pass variables.
 - In the first boot,make sure that pi has a working ethernet connection. Docker images will be loaded and containers will be made, followed by network setup.Pi will reboot as soon as the setup is done, now you can connect to the AP.
 - It will take 30-35mins approx for the setting server up.
-- After connecting , sugarizer will be accessible at 192.168.42.1:8080. 
+- After connecting , sugarizer will be accessible at 10.0.0.1 ,try.sugarizer.org ,server.sugarizer.org ,sugarizer.org. 
 
 ### Download Latest Image
-Download Link: https://drive.google.com/drive/folders/1Jt8X6kHLJqGvl7gSm7xkM1mMRhPBLWWl?usp=sharing
+Download Link: https://drive.google.com/drive/folders/1Jt8X6kHLJqGvl7gSm7xkM1mMRhPBLWWl?usp=sharing (Will be updated soon).
 
 ### Documentation
 https://wiki.sugarlabs.org/go/User:Amanharitsh123
