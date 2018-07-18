@@ -14,3 +14,6 @@ sed -i '/^\//d' /etc/rc.local
 chown -R pi /home/pi/*
 chgrp -R pi /home/pi/*
 systemctl reboot
+
+#Deleting Docker Images
+rm -r /home/pi/docker-images
