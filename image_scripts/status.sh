@@ -26,6 +26,7 @@ sed -i '/^exit 0/d' /etc/rc.local
 echo "mkdir /var/log/nginx" >> /etc/rc.local
 echo "touch /var/log/nginx/error.log" >> /etc/rc.local
 echo "touch /var/log/nginx/access.log" >> /etc/rc.local
+echo "service nginx restart" >> /etc/rc.local
 echo "exit 0" >>  /etc/rc.local
 
 #Rebooting System
