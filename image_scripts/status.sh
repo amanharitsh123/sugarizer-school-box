@@ -13,7 +13,21 @@ sed -i '/^\//d' /etc/rc.local
 #Ownership changed
 chown -R pi /home/pi/*
 chgrp -R pi /home/pi/*
-systemctl reboot
 
 #Deleting Docker Images
 rm -r /home/pi/docker-images
+
+#Disabling Logging by making partition read-only
+echo "none /var/log tmpfs size=1M,noatime 00" >> /etc/fstab
+
+#Setting up nginx log files after boot
+
+sed -i '/^exit 0/d' /etc/rc.local
+echo "mkdir /var/log/nginx" >> /etc/rc.local
+echo "touch /var/log/nginx/error.log" >> /etc/rc.local
+echo "touch /var/log/nginx/access.log" >> /etc/rc.local
+echo "service nginx restart" >> /etc/rc.local
+echo "exit 0" >>  /etc/rc.local
+
+#Rebooting System
+systemctl reboot
