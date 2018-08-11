@@ -55,7 +55,9 @@ Raspberry Pi will reboot as soon as the setup is done, now you can connect to th
 After connected to the WiFi, sugarizer will be accessible at 10.0.0.1, try.sugarizer.org, server.sugarizer.org, sugarizer.org. 
 
 ## Download latest image
-Download latest image [here](http://sugarizer.org/download/2018-07-25-arm64-rpi-4.11.y-rpi3-stretch-arm64.img) (will be updated soon).
+Download latest image [here](http://people.sugarlabs.org/asharma/2018-08-11-arm64-rpi-4.11.y-rpi3-stretch-arm64.img) (on latest commit 143da7c). 
+
+If you are using bmaptool to flash the image , download .bmap file as well [here](http://people.sugarlabs.org/asharma/2018-08-11-arm64-rpi-4.11.y-rpi3-stretch-arm64.bmap)
 
 ## More information
 For more information, see [Amanharitsh123](https://wiki.sugarlabs.org/go/User:Amanharitsh123) page on SugarLabs wiki.
