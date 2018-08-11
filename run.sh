@@ -13,7 +13,7 @@ if which node > /dev/null
         echo "Installing Grunt"
         npm install -g grunt-cli
     else
-        echo -e "Node and NPM not installed/n Exiting script"
+        echo -e "Node and npm not installed\nExiting script"
         exit 0 
     fi
 
