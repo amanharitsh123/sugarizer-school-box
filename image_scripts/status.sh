@@ -20,6 +20,12 @@ rm -r /home/pi/docker-images
 #Disabling Logging by making partition read-only
 echo "none /var/log tmpfs size=1M,noatime 00" >> /etc/fstab
 
+#Setting Up admin account
+sh /home/pi/sugarizer-server/add-admin.sh admin password http://127.0.0.1:8080/auth/signup 
+
+#Changing Server Description 
+sed -i '/description/c\description = Your Sugarizer School Box' /home/pi/sugarizer-server/env/docker.ini
+
 #Setting up nginx log files after boot
 
 sed -i '/^exit 0/d' /etc/rc.local
